@@ -1,3 +1,194 @@
+/* =========================================
+   PERSONA 5 ROYAL – COMPLETE THEME
+   AniList Automail Version
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 body {
   background: hotpink !important;
+}
+
+:root{
+  --p5-red:#e60012;
+  --p5-black:#0a0a0a;
+  --p5-dark:#141414;
+  --p5-white:#ffffff;
+}
+
+/* ===============================
+   GLOBAL RESET
+================================ */
+
+html, body, #app,
+.page-content,
+.user-page-unscoped,
+.content,
+.container {
+  background: var(--p5-black) !important;
+  font-family: 'Anton', sans-serif !important;
+  color: white !important;
+  overflow-x:hidden;
+}
+
+/* ===============================
+   JOKER SPLASH BACKGROUND
+================================ */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(135deg,var(--p5-black) 40%,transparent 40%),
+    url("https://i.imgur.com/8QfQ7ZP.png") center/cover no-repeat;
+  opacity:.15;
+  z-index:-2;
+}
+
+/* ===============================
+   PHANTOM EMBLEM OVERLAY
+================================ */
+
+body::after{
+  content:"";
+  position:fixed;
+  bottom:40px;
+  right:40px;
+  width:200px;
+  height:200px;
+  background:url("https://i.imgur.com/qm7pKpG.png") center/contain no-repeat;
+  opacity:.08;
+  z-index:-1;
+}
+
+/* ===============================
+   LEFT PAUSE MENU
+================================ */
+
+.nav-wrap{
+  position:fixed !important;
+  top:0;
+  left:0;
+  width:260px;
+  height:100vh;
+  background:var(--p5-red) !important;
+  display:flex !important;
+  flex-direction:column;
+  justify-content:center;
+  padding-left:30px;
+  transform:skewX(-12deg);
+  border-right:6px solid white;
+  z-index:9999;
+}
+
+.nav-wrap *{
+  transform:skewX(12deg);
+}
+
+.nav.container{
+  background:transparent !important;
+  padding:0 !important;
+}
+
+.nav-wrap .link{
+  font-size:26px !important;
+  margin:18px 0;
+  text-transform:uppercase;
+  color:white !important;
+  position:relative;
+  transition:.25s;
+}
+
+/* Sliding selector */
+.nav-wrap .link::before{
+  content:"";
+  position:absolute;
+  left:-30px;
+  top:0;
+  height:100%;
+  width:0%;
+  background:white;
+  z-index:-1;
+  transition:width .25s ease;
+}
+
+.nav-wrap .link:hover::before{
+  width:140%;
+}
+
+.nav-wrap .link:hover{
+  color:black !important;
+  transform:translateX(10px) skewX(12deg);
+}
+
+/* ===============================
+   PUSH CONTENT RIGHT
+================================ */
+
+.page-content,
+.user-page-unscoped{
+  margin-left:300px !important;
+}
+
+/* ===============================
+   CHAOTIC PANEL STYLE
+================================ */
+
+.activity-entry,
+.media-card,
+.favourites-wrap,
+.stats-wrap{
+  background:var(--p5-dark) !important;
+  border:4px solid white;
+  box-shadow:8px 8px 0 var(--p5-red);
+  transform:rotate(-1deg);
+  transition:.3s ease;
+}
+
+.activity-entry:hover,
+.media-card:hover{
+  transform:rotate(0deg) scale(1.02);
+}
+
+/* ===============================
+   TAKE YOUR TIME ANIMATION
+================================ */
+
+.page-content::before{
+  content:"TAKE YOUR TIME";
+  position:fixed;
+  top:40px;
+  right:40px;
+  font-size:70px;
+  color:var(--p5-red);
+  text-shadow:6px 6px 0 black;
+  animation:pulse 2s infinite;
+  z-index:5;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+  100%{transform:scale(1);}
+}
+
+/* ===============================
+   DIAGONAL PANEL TRANSITIONS
+================================ */
+
+.page-content{
+  animation:slideIn .6s ease;
+}
+
+@keyframes slideIn{
+  from{
+    opacity:0;
+    transform:translateX(-40px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+
 }
