@@ -5,6 +5,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
+body {
+  background: hotpink !important;
+}
+
 :root{
   --p5-red:#e60012;
   --p5-black:#0a0a0a;
@@ -186,4 +190,5 @@ body::after{
     opacity:1;
     transform:translateX(0);
   }
+
 }
